@@ -238,7 +238,27 @@ class UiManager {
   }
 
   startGame() {
-    
+    this.clearPlayerForm();
+
+    const playerList = document.getElementById("play-screen-scores");
+    playerList.innerHTML = '';
+
+    for (let player of this.game.players) {
+      const div = document.createElement("div");
+      playerList.appendChild(div);
+
+      const icon = document.createElement("img");
+      icon.src = "#";
+      div.appendChild(icon);
+
+      const name = document.createElement("div");
+      name.textContent = player.name;
+      div.appendChild(name);
+
+      const score = document.createElement("div");
+      score.textContent = `(${player.score})`;
+      div.appendChild(score);
+    }
   }
 }
 
