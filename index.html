@@ -33,9 +33,9 @@
     </div>
     <div id="play-screen">
       <div id="game-score-header">
-        <h2>Round 1</h2>
+        <h2 id="current-round">Round 1</h2>
         <div id="score-with-redo">
-          <h1>0</h1>
+          <h1 id="bank-score">0</h1>
           <button>
             <i class="ph ph-arrow-counter-clockwise"></i>
           </button>
@@ -44,7 +44,7 @@
         <p>(game score)</p>
       </div>
       <div id="players">
-        <div>Chelsea's Turn (90)</div>
+        <div id="current-player">Chelsea's Turn (90)</div>
         <div id="play-screen-scores">
           <!-- Filled by main.js -->
           <!-- Make scrollable -->
@@ -52,23 +52,23 @@
         </div>
       </div>
       <div id="keypad">
-        <button>2</button>
+        <button onclick="ui.buttonPressed(Rolls._2)">2</button>
         <!-- gray out after roll 3 -->
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
+        <button onclick="ui.buttonPressed(Rolls._3)">3</button>
+        <button onclick="ui.buttonPressed(Rolls._4)">4</button>
+        <button onclick="ui.buttonPressed(Rolls._5)">5</button>
+        <button onclick="ui.buttonPressed(Rolls._6)">6</button>
+        <button onclick="ui.buttonPressed(Rolls._7)">7</button>
         <!-- Make green for first 3 rolls -->
         <!-- Make red after the first 3 rolls -->
-        <button>8</button>
-        <button>9</button>
-        <button>10</button>
-        <button>11</button>
-        <button>12</button>
-        <!-- gray out after roll 3 -->
-        <button>Doubles</button>
-        <!-- gray out before roll 3 -->
+        <button onclick="ui.buttonPressed(Rolls._8)">8</button>
+        <button onclick="ui.buttonPressed(Rolls._9)">9</button>
+        <button onclick="ui.buttonPressed(Rolls._10)">10</button>
+        <button onclick="ui.buttonPressed(Rolls._11)">11</button>
+        <button onclick="ui.buttonPressed(Rolls._12)">12</button>
+        <!-- gray out after round 3 -->
+        <button onclick="ui.buttonPressed(Rolls.Doubles)">Doubles</button>
+        <!-- gray out before round 3 -->
       </div>
       <nav>
         <button id="bank">

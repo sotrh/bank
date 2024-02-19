@@ -124,7 +124,7 @@ class Game {
     this.turn += 1;
     this.currentPlayer += 1;
 
-    if (this.currentPlayer > this.players.length) {
+    if (this.currentPlayer >= this.players.length) {
       // The `%` operator gets the remainder of a division. It's a
       // great way to keep a number in a particular range. For example
       // if you wanted a number `n` between 0 and 5, you could do
@@ -238,6 +238,13 @@ class UiManager {
   }
 
   startGame() {
+    const currentPlayerText = document.getElementById("current-player");
+    const currentPlayer = this.game.players[this.game.currentPlayer];
+    currentPlayerText.textContent = `${currentPlayer.name}'s Turn (${currentPlayer.score})`;
+
+    const currentRound = document.getElementById("current-round");
+    currentRound.textContent = `Round ${this.game.round + 1}`;
+
     this.clearPlayerForm();
 
     const playerList = document.getElementById("play-screen-scores");
@@ -259,6 +266,20 @@ class UiManager {
       score.textContent = `(${player.score})`;
       div.appendChild(score);
     }
+
+    this.game.start(10);
+  }
+
+  buttonPressed(roll) {
+    this.game.handleRoll(roll);
+    const bankScore = document.getElementById("bank-score");
+    bankScore.textContent = `${this.game.score}`;
+
+    const currentPlayer = document.getElementById("current-player");
+    currentPlayerText.textContent = `${currentPlayer.name}'s Turn (${currentPlayer.score})`;
+
+    const currentRound = document.getElementById("current-round");
+    currentRound.textContent = `Round ${this.game.round + 1}`;
   }
 }
 
