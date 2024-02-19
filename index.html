@@ -16,6 +16,7 @@
         <h2>Enter Player Names</h2>
         <form id="add-players-form">
           <input id="add-players-form-name" name="name" type="text" />
+          <!-- Make able to scroll -->
         </form>
         <div id="add-players-list">
           <!-- Filled by main.js -->
@@ -24,27 +25,50 @@
       </div>
     </div>
     <div id="play-screen">
-      <div id="round">Round 1</div>
-      <h1>40</h1>
-      <div>(game score)</div>
-      <div>Chelsea's Turn (90)</div>
-      <div id="play-screen-scores">
-        <!-- Filled by main.js -->
+      <div id="game-score-header">
+        <h2>Round 1</h2>
+        <div id="score-with-redo">
+          <h1>0</h1>
+          <button> <- </button>
+          <!-- span will get an icon. Arrow is place holder -->
+        </div>
+        <p>(game score)</p>
+      </div>
+      <div id="players">
+        <div>Chelsea's Turn (90)</div>
+        <div id="play-screen-scores">
+          <!-- Filled by main.js -->
+          <!-- Make scrollable -->
+          <!-- player color changes when banked -->
+        </div>
       </div>
       <div id="keypad">
         <button>2</button>
+        <!-- gray out after roll 3 -->
         <button>3</button>
         <button>4</button>
         <button>5</button>
         <button>6</button>
         <button>7</button>
+        <!-- Make green for first 3 rolls -->
+        <!-- Make red after the first 3 rolls -->
         <button>8</button>
         <button>9</button>
         <button>10</button>
         <button>11</button>
         <button>12</button>
+        <!-- gray out after round 3 -->
         <button>Doubles</button>
+        <!-- gray out before round 3 -->
       </div>
+      <nav>
+        <button id="bank">
+            <img src="#" alt="#">
+        </button>
+        <button id="info">
+            <img src="#" alt="#">
+        </button>
+      </nav>
     </div>
     <script src="main.js"></script>
   </body>
