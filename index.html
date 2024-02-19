@@ -3,13 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css"
+    />
+    <!-- https://phosphoricons.com/ -->
+    <!-- https://github.com/phosphor-icons/web -->
     <title>Bank</title>
   </head>
   <body>
     <div id="start-screen">
       <div id="title">
         <h1>Bank</h1>
-        <img src="#" alt="#" />
+        <i class="ph ph-piggy-bank"></i>
         <button id="play">Play?</button>
       </div>
       <div id="player-popup">
@@ -29,7 +36,9 @@
         <h2>Round 1</h2>
         <div id="score-with-redo">
           <h1>0</h1>
-          <button> <- </button>
+          <button>
+            <i class="ph ph-arrow-counter-clockwise"></i>
+          </button>
           <!-- span will get an icon. Arrow is place holder -->
         </div>
         <p>(game score)</p>
@@ -57,36 +66,32 @@
         <button>10</button>
         <button>11</button>
         <button>12</button>
-        <!-- gray out after round 3 -->
+        <!-- gray out after roll 3 -->
         <button>Doubles</button>
-        <!-- gray out before round 3 -->
+        <!-- gray out before roll 3 -->
       </div>
       <nav>
         <button id="bank">
-            <img src="#" alt="#">
+          <i id="bank-icon" class="ph ph-piggy-bank"></i>
         </button>
         <button id="info">
-            <img src="#" alt="#">
+          <i class="ph ph-info"></i>
         </button>
       </nav>
     </div>
     <div id="end-screen">
-        <div id="winner">
-            <img src="#" alt="#">
-            <h2>Winner!</h2>
-            <h3>Ron with 280 Points!</h3>
-        </div>
-        <div id="end-scores">
-            <!-- Rest of players with scores using the p tag -->
-        </div>
-        <div id="end-buttons">
-            <button id="play-again">
-                Play again?
-            </button>
-            <button id="new-game">
-                New Game
-            </button>
-        </div>
+      <div id="winner">
+        <i class="ph ph-trophy"></i>
+        <h2>Winner!</h2>
+        <h3>Ron with 280 Points!</h3>
+      </div>
+      <div id="end-scores">
+        <!-- Rest of players with scores using the p tag -->
+      </div>
+      <div id="end-buttons">
+        <button id="play-again">Play again?</button>
+        <button id="new-game">New Game</button>
+      </div>
     </div>
     <script src="main.js"></script>
   </body>
