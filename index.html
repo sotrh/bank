@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bank</title>
-</head>
-<body>
-    <div id="add-players">
+  </head>
+  <body>
+    <div id="start-screen">
+      <div id="title">
+        <h1>Bank</h1>
+        <img src="#" alt="#" />
+        <button>Play?</button>
+      </div>
+      <div id="player-popup">
         <h2>Enter Player Names</h2>
         <form id="add-players-form">
-            <input id="add-players-form-name" name="name" type="text">
+          <input id="add-players-form-name" name="name" type="text" />
         </form>
         <div id="add-players-list">
-            <!-- Filled by main.js -->
+          <!-- Filled by main.js -->
         </div>
         <button onclick="ui.startGame">Start Game</button>
+      </div>
     </div>
     <div id="play-screen">
-        <div id="round">
-            Round 1 (howdy)
-        </div>
-        <h1>40</h1>
-        <div>(game score)</div>
-        <div>Chelsea's Turn (90)</div>
-        <div id="play-screen-scores">
-            <!-- Filled by main.js -->
-        </div>
-        <div id="keypad">
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>10</button>
-            <button>11</button>
-            <button>12</button>
-            <button>Doubles</button>
-        </div>
+      <div id="round">Round 1</div>
+      <h1>40</h1>
+      <div>(game score)</div>
+      <div>Chelsea's Turn (90)</div>
+      <div id="play-screen-scores">
+        <!-- Filled by main.js -->
+      </div>
+      <div id="keypad">
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>10</button>
+        <button>11</button>
+        <button>12</button>
+        <button>Doubles</button>
+      </div>
     </div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
