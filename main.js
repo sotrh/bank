@@ -234,7 +234,7 @@ class UiManager {
     form.reset();
 
     document.getElementById("add-players-list-button").disabled =
-      this.game.players.length > 2;
+      this.game.players.length < 2;
   }
 
   startGame() {
