@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank</title>
+
+    <!-- incons -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css"
+    />
+    <!-- https://phosphoricons.com/ -->
+    <!-- https://github.com/phosphor-icons/web -->
+
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="../styles/styles.css" />
+    
+  </head>
+  <body>
+    <div id="start-screen">
+      <div id="title">
+        <h1>Bank</h1>
+        <i class="ph ph-piggy-bank"></i>
+        <button id="play">Play?</button>
+      </div>
+      <div id="player-popup">
+        <h2>Enter Player Names</h2>
+        <form id="add-players-form">
+          <input id="add-players-form-name" name="name" type="text" />
+          <!-- Make able to scroll -->
+        </form>
+        <div id="add-players-list">
+          <!-- Filled by main.js -->
+        </div>
+        <button id="add-players-list-button" onclick="ui.startGame()">Start Game</button>
+      </div>
+    </div>
+    <div id="play-screen">
+      <div id="game-score-header">
+        <h2 id="current-round">Round 1</h2>
+        <div id="score-with-redo">
+          <h1 id="bank-score">0</h1>
+          <button>
+            <i class="ph ph-arrow-counter-clockwise"></i>
+          </button>
+          <!-- span will get an icon. Arrow is place holder -->
+        </div>
+        <p>(game score)</p>
+      </div>
+      <div id="players">
+        <div id="current-player">Chelsea's Turn (90)</div>
+        <div id="play-screen-scores">
+          <!-- Filled by main.js -->
+          <!-- Make scrollable -->
+          <!-- player color changes when banked -->
+        </div>
+      </div>
+      <div id="keypad">
+        <button onclick="ui.buttonPressed(Rolls._2)">2</button>
+        <!-- gray out after roll 3 -->
+        <button onclick="ui.buttonPressed(Rolls._3)">3</button>
+        <button onclick="ui.buttonPressed(Rolls._4)">4</button>
+        <button onclick="ui.buttonPressed(Rolls._5)">5</button>
+        <button onclick="ui.buttonPressed(Rolls._6)">6</button>
+        <button onclick="ui.buttonPressed(Rolls._7)">7</button>
+        <!-- Make green for first 3 rolls -->
+        <!-- Make red after the first 3 rolls -->
+        <button onclick="ui.buttonPressed(Rolls._8)">8</button>
+        <button onclick="ui.buttonPressed(Rolls._9)">9</button>
+        <button onclick="ui.buttonPressed(Rolls._10)">10</button>
+        <button onclick="ui.buttonPressed(Rolls._11)">11</button>
+        <button onclick="ui.buttonPressed(Rolls._12)">12</button>
+        <!-- gray out after round 3 -->
+        <button onclick="ui.buttonPressed(Rolls.Doubles)">Doubles</button>
+        <!-- gray out before round 3 -->
+      </div>
+      <nav>
+        <button id="bank">
+          <i id="bank-icon" class="ph ph-piggy-bank"></i>
+        </button>
+        <button id="info">
+          <i class="ph ph-info"></i>
+        </button>
+      </nav>
+    </div>
+    <div id="end-screen">
+      <div id="winner">
+        <i class="ph ph-trophy"></i>
+        <h2>Winner!</h2>
+        <h3>Ron with 280 Points!</h3>
+      </div>
+      <div id="end-scores">
+        <!-- Rest of players with scores using the p tag -->
+      </div>
+      <div id="end-buttons">
+        <button id="play-again">Play again?</button>
+        <button id="new-game">New Game</button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
