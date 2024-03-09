@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Lily+Script+One&display=swap');
+
+// Fonts
+$heroFont  : "Lily Script One", system-ui;
+$buttonFont : 'K2D' 800, normal;
+$bodyFont: 'K2D' 400, normal;
+
+
+
+// Font Sizing
+$HeroFontSize      : 68px;
+$buttonFontSize    : 24px;
+$h3FontSize        : 18px;
+$baseLineHeight    : 1.5;
+$headingLineHeight : 1.2;
+
+// Colors
+$black: #212121;
+$white: #f0f0f0;
+
+$lighter-green: #DBEABC;
+$light-green: #85BB65;
+$dark-green: #5C8E3C;
+$darker-green: #355123;
+
+// Spacing
+$pad : 2rem;
