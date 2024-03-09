@@ -2,7 +2,6 @@ use leptos::*;
 use leptos_router::use_navigate;
 
 use super::Player;
-
 use super::PlayerContext;
 
 /// Renders the home page of your application.
