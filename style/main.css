@@ -71,4 +71,14 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#keypad {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}/*# sourceMappingURL=main.css.map */

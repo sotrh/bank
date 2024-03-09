@@ -1,3 +1,10 @@
+@import "_reset";
+@import "_variables";
+@import "_start-screen";
+@import "_play-screen";
+@import "_end-screen";
+
+
 body {
 	font-family: sans-serif;
 	text-align: center;
@@ -7,3 +14,4 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
