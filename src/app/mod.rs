@@ -2,6 +2,14 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
+mod end_screen;
+mod start_screen;
+mod game_screen;
+
+use crate::app::start_screen::StartScreen;
+use crate::app::game_screen::GameScreen;
+use crate::app::end_screen::EndScreen;
+
 #[derive(Debug, Clone)]
 pub struct Player {
     name: String,
@@ -31,7 +39,9 @@ pub fn App() -> impl IntoView {
         <Router>
             <main>
                 <Routes>
-                    <Route path="" view=HomePage/>
+                    <Route path="" view=StartScreen/>
+                    <Route path="/game" view=GameScreen/>
+                    <Route path="/end" view=EndScreen/>
                     <Route path="/*any" view=NotFound/>
                 </Routes>
             </main>
@@ -39,62 +49,6 @@ pub fn App() -> impl IntoView {
     }
 }
 
-/// Renders the home page of your application.
-#[component]
-fn HomePage() -> impl IntoView {
-    let PlayerContext(players, set_players) = use_context().unwrap();
-    let (name, set_name) = create_signal("".to_owned());
-    let (error, set_error) = create_signal("");
-
-    let add_name = move |_| {
-        let name = name.get();
-
-        if error.with(|error| error.len() > 0) || name.len() == 0 {
-            return;
-        }
-
-        set_players.update(move |players| {
-            players.push(Player { name, score: 0 });
-        });
-    };
-
-    let name_input = move |ev| {
-        set_name(event_target_value(&ev));
-
-        // Maybe disable the button on error?
-        if players.with(|players| {
-            players
-                .iter()
-                .find(|player| player.name == name.get())
-                .is_some()
-        }) {
-            set_error.set("Player name already taken");
-        } else {
-            set_error.set("")
-        }
-    };
-
-    view! {
-        <h1>"Bank"</h1>
-        <input type="text"
-            on:input=name_input
-            prop:value=name
-        />
-        <button on:click=add_name>"Add Player"</button>
-        <div>{error}</div>
-        <ul>
-            <For
-                each=players
-                key=|player| player.name.clone()
-                children=move |player| {
-                    view! {
-                        <li>{player.name}</li>
-                    }
-                }
-            />
-        </ul>
-    }
-}
 
 /// 404 - Not Found
 #[component]
